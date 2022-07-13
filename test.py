@@ -36,7 +36,7 @@ with mp_hands.Hands(
             print(cx, cy)
             # print (ids, cx, cy)
         mp_drawing.draw_landmarks(
-            image, hand_landmarks, mp_hands.HAND_CONNECTIONS)
+            image, hand_landmarks, mp_hands)
     cv2.imshow('MediaPipe Hands', image)
     if cv2.waitKey(5) & 0xFF == 27:
       break

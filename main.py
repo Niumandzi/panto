@@ -19,6 +19,11 @@ while True:
                 cx, cy = int(lm.x * width), int(lm.y * height)
                 cv2.circle(img, (cx, cy), 8, (255, 0, 255), cv2.FILLED)
             mp_draw.draw_landmarks(img, hand_landmarks, mp_hands.HAND_CONNECTIONS)
+            print(
+                f'Index finger tip coordinates: (',
+                f'{hand_landmarks.landmark[mp_hands.HandLandmark.INDEX_FINGER_TIP].x * width}, '
+                f'{hand_landmarks.landmark[mp_hands.HandLandmark.INDEX_FINGER_TIP].y * height})'
+            )
 
     cv2.imshow("Image", img)
     if cv2.waitKey(1) & 0xFF == ord('q'):

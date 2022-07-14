@@ -21,12 +21,6 @@ while True:
                 cx, cy = int(lm.x * width), int(lm.y * height)
                 cv2.circle(img, (cx, cy), 8, (255, 0, 255), cv2.FILLED)
                 mp_draw.draw_landmarks(img, hand_landmarks, mp_hands.HAND_CONNECTIONS)
-            #Bounding box
-                x = [landmark.x for landmark in hand_landmarks.landmark]
-                y = [landmark.y for landmark in hand_landmarks.landmark]
-                center = np.array([np.mean(x) * width, np.mean(y) * height]).astype('int32')
-                cv2.circle(img, tuple(center), 10, (255, 0, 0), 1)  # for checking the center
-                cv2.rectangle(img, (center[0] - 200, center[1] - 200), (center[0] + 200, center[1] + 200), (255, 0, 0), 1)
             #Finger coordinates
                 print(
                     f'Index finger tip coordinates: (',
